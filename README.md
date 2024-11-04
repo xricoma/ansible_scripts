@@ -1,34 +1,37 @@
----------------------------------------------------------------
-Disable AUDIT desde Kernel
 
-The change can be implemented the following way :
-1.- Open the file /etc/default/grub
+# Disable AUDIT desde Kernel
+<details>
+
+<summary>Disable AUDIT desde Kernel</summary>
+
+The change can be implemented the following way:  
+1.- Open the file /etc/default/grub  
 2.- Append "audit=0" to the space-separated list of options specified in the GRUB_CMDLINE_LINUX_DEFAULT variable.
 3.- Save the file
 4.- Update the GRUB2 boot loader configuration in /boot/grub2/grub.cfg by executing
-	# grub-mkconfig -o /boot/grub/grub.cfg
+`# grub-mkconfig -o /boot/grub/grub.cfg`
 5.- Reboot the system
 6.- Verify that the setting is present in the /proc/cmdline file
----------------------------------------------------------------
 
----------------------------------------------------------------
-Error change version - debian 12
----------------------------------------------------------------
+</details>
+
+# Error change version - debian 12
+
 N: Repository 'http://deb.debian.org/debian bookworm InRelease' changed its 'Version' value from '12.6' to '12.7'
 
 apt-get --allow-releaseinfo-change update
----------------------------------------------------------------
 
----------------------------------------------------------------
-LINUX COMMANDS
+
+
+# LINUX COMMANDS
 
 alias netl='netstat -an | grep -w LISTEN'
 alias sysl='systemctl list-unit-files'
----------------------------------------------------------------
 
----------------------------------------------------------------
-LINUX COMMANDS
----------------------------------------------------------------
+
+
+# LINUX COMMANDS
+
 systemctl daemon-reload
 
 systemctl list-unit-files
@@ -45,17 +48,17 @@ lvextend -L 20G /dev/iac-vg/root -r
 
 apt install bind9-dnsutils net-tools
 
----------------------------------------------------------------
 
----------------------------------------------------------------
-URLs DOCKER INTERESANTES
----------------------------------------------------------------
+
+
+# URLs DOCKER INTERESANTES
+
 https://www.virtualizationhowto.com/2024/07/best-docker-container-commands-you-arent-using/
----------------------------------------------------------------
 
----------------------------------------------------------------
-INSTALL DOCKER
----------------------------------------------------------------
+
+
+# INSTALL DOCKER
+
 apt-get update
 apt-get install sudo ca-certificates curl
 
@@ -74,19 +77,19 @@ groupadd docker
 
 usermod -aG docker netalertx
 usermod -aG sudo netalertx
----------------------------------------------------------------
 
----------------------------------------------------------------
-INSTALL prometheus-node-exporter
----------------------------------------------------------------
+
+
+# INSTALL prometheus-node-exporter
+
 --collector.processes --no-collector.xfs --no-collector.zfs --no-collector.fibrechannel --no-collector.infiniband --no-collector.nfs --no-collector.nfsd --no-collector.nvme --no-collector.powersupplyclass --no-collector.selinux --collector.tcpstat
----------------------------------------------------------------
 
----------------------------------------------------------------
-EXECUTE netalertx
----------------------------------------------------------------
+
+
+# EXECUTE netalertx
+
 docker run -d --network=host   -v /opt/app/config:/app/config   -v /opt/app/db:/app/db   -v /opt/app/log:/app/front/log   -v /opt/app/api:/app/front/api   -e TZ=Europe/Madrid   -e PORT=20211 --name netalertx --restart=always  jokobsk/netalertx:latest
----------------------------------------------------------------
+
 
   151  usermod -u 101 netalertx
   152  cat /etc/passwd
