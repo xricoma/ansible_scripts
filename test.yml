@@ -1,0 +1,7 @@
+---
+- name: Ejemplo de Playbook
+  tasks:
+    - name: Crear un fichero
+      file:
+        path: /tmp/archivo.txt
+        state: touch
