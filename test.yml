@@ -1,5 +1,6 @@
 ---
 - name: Ejemplo de Playbook
+  hosts: localhost
   tasks:
     - name: Crear un fichero
       file:
