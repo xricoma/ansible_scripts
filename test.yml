@@ -1,6 +1,6 @@
 ---
 - name: Ejemplo de Playbook
-  hosts: localhost
+  hosts: 192.168.1.29
   tasks:
     - name: Crear un fichero
       file:
