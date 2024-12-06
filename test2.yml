@@ -1,0 +1,9 @@
+---
+- name: Shell module example
+  hosts: servers
+  tasks:
+  - name: test shell
+    shell: |
+      date > /tmp/date.txt
+      uptime > /tmp/uptime.txt
+      echo "Hello World" > /tmp/hello.txt

@@ -1,0 +1,8 @@
+---
+- name: Ejemplo de Playbook
+  hosts: servers
+  tasks:
+    - name: Crear un fichero
+      file:
+        path: /tmp/archivo.txt
+        state: touch
