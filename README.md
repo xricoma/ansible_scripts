@@ -127,5 +127,3 @@ docker run -d --name=Fenrus -e TZ=Europe/Madrid -p 3000:3000 -v /opt/fenrus:/app
 docker run --name homarr --restart unless-stopped -p 7575:7575 -v /var/run/docker.sock:/var/run/docker.sock -v /opt/homarr/configs:/app/data/configs -v /opt/homarr/data:/data -v /opt/homarr/icons:/app/public/icons -d ghcr.io/ajnart/homarr:latest
 
 docker run --pull=always --restart=unless-stopped -d -p 5006:5006 -v /opt/actualbudget:/data --name my_actual_budget actualbudget/actual-server:latest
-
-kTsgv9YNADrCxRsgVbL5
