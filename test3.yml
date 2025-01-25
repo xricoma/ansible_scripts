@@ -1,6 +1,5 @@
 ---
 - name: Ejemplo de Playbook
-  hosts: TEST
   tasks:
     - name: Crear un fichero
       file:
